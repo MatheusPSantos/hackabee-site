@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.links {
+  position: relative;
+  width: 40%;
+  height: 100%;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.links nav {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 200px auto 150px auto;
+}
+
+.links nav a {
+  margin: 5px;
+  color: blueviolet;
+  text-align: left;
+}
+
+.links nav a:hover {
+  transition: all ease-in-out 0.1s;
+  color: orange;
+  text-decoration: underline;
+}
+
+.links footer {
+  font-size: 12px;
+  font-weight: normal;
+  color: #eeccee;
+  position: relative;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-top: 2px #eeccee solid;
+  padding-top: 20px;
+}
+.links footer a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto
+}
+.links footer img {
+  width: 24px;
+}
+
+.hackabee-brand {
+  position: relative;
+  width: 60%;
+  height: 100%;
+  content: '';
+  background-image: url('https://img.freepik.com/free-vector/abstract-technology-particles-low-poly-background_1017-23831.jpg?size=626&ext=jpg&ga=GA1.2.862516125.1601424000');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
