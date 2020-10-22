@@ -16,12 +16,14 @@ body {
 }
 
 .links {
-  position: relative;
-  width: 40%;
+  position: fixed;
+  width: 30%;
   height: 100%;
-  font-size: 25px;
+  font-size: 18pt;
   font-weight: bold;
-  font-family: sans-serif;
+  font-family: 'Nunito', sans-serif;  
+  display: flex;
+  flex-direction: column;
 }
 
 .links nav {
@@ -29,7 +31,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 90%;
-  margin: 200px auto 150px auto;
+  margin: auto;
 }
 
 .links nav a {
@@ -48,6 +50,7 @@ body {
   font-size: 12px;
   font-weight: normal;
   color: #eeccee;
+  text-decoration: none;
   position: relative;
   width: 90%;
   margin: auto;
@@ -67,12 +70,47 @@ body {
   width: 24px;
 }
 
-.hackabee-brand {
+#logo {
   position: relative;
+  margin: 20px;
+  margin-bottom: 0;
+}
+#logo img {
   width: 60%;
-  height: 100%;
+}
+
+.hackabee-texts {
+  position: relative;
+  width: 70%;
+  height: auto;
   content: '';
-  background-image: url('https://img.freepik.com/free-vector/abstract-technology-particles-low-poly-background_1017-23831.jpg?size=626&ext=jpg&ga=GA1.2.862516125.1601424000');
-  background-size: cover;
-  background-repeat: no-repeat;
+  margin: 0 0 0 40%;
+  padding: 20px 40px 20px 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+#header-image {
+  position: relative;
+  width: 100%;
+  margin: auto auto 20px auto;
+}
+
+.hackabee-texts h2 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  font-size: 18pt;
+  margin: 10px auto 10px 15px;
+  border-left:orange 4px solid;
+  padding-left: 5px;
+}
+
+.hackabee-texts p {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 100;
+  line-height: 1.4;
+  font-size: 14pt;
+  text-indent: 15px;
+  margin: 15px auto;
 }
