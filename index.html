@@ -6,7 +6,7 @@
   <title>Bem vindo ao Hackabee 2.0</title>
   <link rel="stylesheet" href="index.css">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;0,700;1,300&display=swap" rel="stylesheet">
-
+  <link rel="stylesheet" href="mobile.css">
 </head>
 <body>
   <div class="content">
@@ -14,27 +14,35 @@
       <a id="logo" href="/">
         <img  alt="hackabee logo" src="./assets/logo.png"/>
       </a>
-      <nav>
-        <a href="#oquee">O que é o Hackabee?</a>
-        <a href="#inscricao">Quero me inscrever</a>
-        <a href="#cronograma">Cronograma</a>
-        <a href="#regras">Regras do Jogo</a>
-        <a href="#guia">Guia do Participante</a>
-        <a href="#patrocinio">Patrocinadores</a>
-      </nav>
-      <footer>
-        <a href="https://www.instagram.com/hackabee.utfpr/" target="_blank">
-          <img src="./assets/instagram.png" alt="instagram logo"> @hackabee.utfpr
-        </a>
-        <a href="https://www.instagram.com/hackabee.utfpr/" target="_blank">
-          <img src="./assets/instagram.png" alt="instagram logo"> @hackabee.utfpr
-        </a>
-        <a href="https://www.instagram.com/hackabee.utfpr/" target="_blank">
-          <img src="./assets/instagram.png" alt="instagram logo"> @hackabee.utfpr
-        </a>
+      <div id="burguer">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div id="nav">
 
-      </footer>
-    </section>
+        <nav>
+          <a href="#oquee">O que é o Hackabee?</a>
+          <a href="#inscricao">Quero me inscrever</a>
+          <a href="#cronograma">Cronograma</a>
+          <a href="#regras">Regras do Jogo</a>
+          <a href="#guia">Guia do Participante</a>
+          <a href="#patrocinio">Patrocinadores</a>
+        </nav>
+        <footer>
+          <a href="https://www.instagram.com/hackabee.utfpr/" target="_blank">
+            <img src="./assets/instagram.png" alt="instagram logo"> @hackabee.utfpr
+          </a>
+          <a href="https://www.instagram.com/hackabee.utfpr/" target="_blank">
+            <img src="./assets/instagram.png" alt="instagram logo"> @hackabee.utfpr
+          </a>
+          <a href="https://www.instagram.com/hackabee.utfpr/" target="_blank">
+            <img src="./assets/instagram.png" alt="instagram logo"> @hackabee.utfpr
+          </a>
+          
+        </footer>
+      </div>
+      </section>
     <section class="hackabee-texts">
       <img id="header-image" src="./assets/header-image.png" alt="header iamge"/>
       <section id="oquee">
@@ -167,4 +175,15 @@
     </section>
   </div>
 </body>
+<script>
+  var nav = document.getElementById("nav")
+  document.getElementById("burguer").addEventListener("click", event => {
+    if(nav.style.display === "none" || nav.style.display === "") {
+      nav.style.display = "block"
+    } else {
+      nav.style.display = "none"
+      
+    }
+  })
+</script>
 </html>

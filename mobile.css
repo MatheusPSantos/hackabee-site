@@ -1,0 +1,95 @@
+@media only screen and (max-width: 600px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .content {
+    position: relative;
+    display: flex;
+    flex-direction: column
+  }
+  
+  .links {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    background: white;
+    height: 70px;
+  }
+
+  .links footer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: auto;
+    font-size: 10pt;
+  }
+
+  .links footer  a {
+    margin: 10px;
+  }
+
+  #burguer {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  #burguer {
+    background-color: white;
+    margin-left: 80%;
+    margin-top: 20px;
+    position: fixed;
+    z-index: 1;
+  }
+
+  #nav {  
+    position: fixed;
+    background: white;
+    margin: 70px 20px;
+    width: 90%;
+    height: 100%;
+    display: none;
+  }
+
+  #burguer span {
+    display: inline;
+    position: relative;
+    margin: auto;
+    border: 1px solid black;
+    width: 20px;
+    border-radius: 5px;
+    height: 2px;
+    margin: 3px 4px;
+  }
+
+  .hackabee-texts {
+    position: relative;
+    width: 90%;
+    margin: 170px auto auto auto;
+    padding: 0;
+  }
+
+  .hackabee-texts h2 {
+    position: relative;
+    width: 80%;
+    margin: 20px auto;
+  }
+  
+  .hackabee-texts p {
+    position: relative;
+    width: 80%;
+    margin: 10px auto;
+  }
+
+  #header-image {
+    position: relative;
+    width: 90%;
+    margin: 10px auto;
+  }
+}

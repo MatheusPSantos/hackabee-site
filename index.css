@@ -46,6 +46,15 @@ body {
   text-decoration: underline;
 }
 
+#nav {
+  position: relative;
+  display: block;
+}
+
+#burguer {
+  display: none;
+}
+
 .links footer {
   font-size: 12px;
   font-weight: normal;
