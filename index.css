@@ -31,7 +31,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 90%;
-  margin: 100px auto;
+  margin: 50px auto;
 }
 
 .links nav a {
@@ -81,11 +81,12 @@ body {
 
 #logo {
   position: relative;
-  margin: 20px;
+  margin: 20px auto 5px 20px;
   margin-bottom: 0;
+
 }
 #logo img {
-  width: 60%;
+  width: 50%;
 }
 
 .hackabee-texts {
@@ -106,7 +107,7 @@ body {
   margin: auto auto 20px auto;
 }
 
-.hackabee-texts h2 {
+.hackabee-texts h2, h1 {
   font-family: 'Nunito', sans-serif;
   font-weight: bold;
   font-size: 18pt;

@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://www.hackabee.netlify.app/"
+  to = "https://hackabee.netlify.app/"
+  status = 301
+  force = true

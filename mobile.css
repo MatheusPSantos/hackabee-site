@@ -75,7 +75,7 @@
     padding: 0;
   }
 
-  .hackabee-texts h2 {
+  .hackabee-texts h2, h1 {
     position: relative;
     width: 80%;
     margin: 20px auto;
