@@ -1,0 +1,646 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Guia do Participante</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a083e4f6-1160-47ca-bbe6-1f36028b6198" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1500930540495-e92875696a16?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;ixid=eyJhcHBfaWQiOjYzOTIxfQ" style="object-position:center 60.68%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">👩🏾‍🔬</span></div><h1 class="page-title">Guia do Participante</h1></header><div class="page-body"><blockquote id="9b39fb2b-0781-417c-ac1f-067dea4c7f11" class="">Bem vindx ao GUIA DO PARTICIPANTE, o seu Guia. Aqui estarão detalhados algumas informações que você precisa para tirar o máximo de proveito do <strong>Hackabee 2.0</strong> 🐝. Leia com bastante atenção 😉.</blockquote><h1 id="ab7c20a6-6ebe-4bc0-8eed-53fcb3e8010d" class="">O que é o Hackabee 🐝?</h1><p id="03c88399-603d-4bbe-86b4-38311bfb31fb" class="">O <strong>Hackabee</strong> tem o objetivo de integrar os alunos da UTFPR com a realidade da nossa sociedade e da universidade, propor soluções tecnológicas que resolvam problemas de relevância significativa para ambos e fomentar o empreendedorismo e o ecossistema de inovação dentro da Universidade.</p><p id="4d6ebca1-d8ef-4b98-a03e-64eeaed8f3a5" class="">O evento trata-se de uma maratona de criação, onde equipes formadas por alunos competem entre si para elaborar soluções inovadoras para os problemas apresentados dentro do evento. As soluções deverão atender ao seguinte tema:</p><blockquote id="26878dcc-79fd-40f6-a233-f66a46fe3943" class=""> <strong>Educação digital</strong> -  inovações para promover um ensino de melhor qualidade, mais inclusivo e em sintonia com as transformações do mundo atual.</blockquote><h1 id="ab18c407-e62b-4200-a089-06bccc723637" class="">Contextualização sobre o Tema 👩🏼‍🚀</h1><p id="4ce54661-a544-43ce-959e-68f6cf956b44" class="">Um dos principais motivos da existência do <strong>Hackabee</strong> é ajudar a impulsionar no universitário o desejo de transformar a sociedade em que ele vive utilizando dos conhecimentos que ele obteve dentro e fora do ambiente acadêmico. Por isso os temas sempre estarão envolvidos com a <strong>Universidade e sociedade</strong>.</p><p id="bd1872cb-6d86-4aaf-a6bf-535dde26051b" class="">Nesta edição <strong>2.0</strong> resolvemos trazer para você desafios relacionados à <strong>Educação Digital</strong> e como podemos torná-la mais acessível e contemporânea. Com isso, esperamos que você e sua equipe trabalhem problemas e avaliem soluções que estejam dentro deste tema.</p><p id="874f06d3-ca82-45c6-9447-077fcfee7847" class="">Durante todo o evento, serão ministradas palestras e fóruns sobre o tema. Mentores estarão abertos para que você e seu time possam trocar ideias, tirar dúvidas e ouvir sugestões a respeito das soluções que irão propor para os desafios que irão encontrar.</p><h3 id="81f48351-1752-4d94-962b-34119be0ec43" class="">Mas afinal, o que é Educação Digital?</h3><p id="6f3d3dd9-e8df-4a58-9ada-dc1e9358a734" class="">Praticar a utilização de meios tecnológicos em métodos de ensino pode ser uma boa definição para <strong>Educação Digital</strong>. Porém em uma breve busca em seu navegador mais próximo, você poderá encontrar muitas outras definições, e isso é belo. Vale lembrar também que a <strong>Educação Digital </strong>não se resume somente à Educação a Distância (EAD), que tem sim um grande papel dentro deste tema, porém não o resume.</p><p id="7bd982fd-354a-4474-8405-a2fc093f7c64" class="">Dentro deste assunto podemos citar alguns tópicos interessantes e que podem ajudar no desenvolvimento da sua solução:</p><ul id="7dc036cb-c886-4fef-ab7c-7b6a5540b9ca" class="bulleted-list"><li>Desafios da implementação de tecnologias em métodos de ensino;</li></ul><ul id="0c4f3208-df3f-4a11-8672-82a997a3cf0b" class="bulleted-list"><li>EdTechs e inovação no setor Educacional;</li></ul><ul id="931042ee-cd35-482e-942b-24d7d038d425" class="bulleted-list"><li>Como os governos mundo a fora estão utilizando as novas tecnologias para mudar tradicionais métodos de ensino;</li></ul><ul id="730ffe31-6a87-4725-8584-f929ac3ca53e" class="bulleted-list"><li>Robotização do Ensino;</li></ul><ul id="1a70ac57-0845-4587-9833-9a8cdc44421d" class="bulleted-list"><li>Ensino a Distância;</li></ul><p id="00950a1b-b917-4fd3-aecc-c0d570e9bfc1" class="">Vale lembrar que esses são somente alguns tópicos a respeito do tema. Nós recomendamos fortemente que você e sua equipe pesquisem mais a fundo sobre outros assuntos que não estão listados aqui mas que possuem ligações com os desafios que vocês encontrarem.</p><h1 id="1d2bf753-9f1a-4200-b704-27b77b10400f" class="">Cronograma 📅</h1><p id="f3496a7e-37b0-424b-939c-842a013bcc86" class="">T.B.D</p><h1 id="d9deeb4e-d9bc-4b52-905d-2a68b23613ab" class="">Não tenho uma ideia, e agora?</h1><div id="dd771340-5d4a-4b3a-8bd5-6c9a70007ed2" class="column-list"><div id="daa03fdc-7aac-42f1-8594-553d2741130a" style="width:56.25%" class="column"><p id="0a59b1a8-4774-4621-ba6d-dbda185465d3" class="">Dentro do evento haverão um espaços para apresentações rápidas dos participantes que tiveram ideias já no início do evento ou ao ler este belo guia. Recomendamos que você observe bem quais dessas ideias apresentadas você acha mais interessante, assim você pode adotar uma e entrar para uma equipe que você tenha mais identificação.</p><p id="23dbdd38-6668-4382-9a8a-a7157de49dd2" class="">Garantimos que será disponibilizado uma boa quantidade de tempo para que você possa encontrar a tampa da sua panel ... digo ... membros para a sua equipe.</p><p id="60504459-aa20-4013-bfeb-7ed69c659db6" class="">
+</p></div><div id="0fefc5b8-be9d-434d-92d4-9fb320562dd6" style="width:43.74999999999999%" class="column"><figure id="1e6b3538-0609-427c-a7e2-73d9c1fe612e" class="image"><a href="https://trecobox.com.br/wp-content/uploads/2019/12/baby-yoda-gif-animado.gif"><img style="width:288px" src="https://trecobox.com.br/wp-content/uploads/2019/12/baby-yoda-gif-animado.gif"/></a></figure><p id="6473f73e-c0d3-49d6-83bc-c033dedbe6bb" class="">
+</p></div></div><h1 id="641b63c9-2316-489a-bb37-21352a5bd7de" class="">Como deve ser formada a equipe? </h1><p id="38f5cad7-9b4a-4e01-b065-3f37a2b75f80" class="">O momento de formação das equipes tende a ser muito especial. Você estará prestes a conhecer novas pessoas para compartilhar ideias. Use e abuse da comunicação. Você pode entrar para um time por identificação com o grupo ou com a ideia. Conheça <mark class="highlight-blue"><strong>aqui</strong></mark> o nosso mural de participantes.</p><h2 id="d0930b5b-f693-4d2f-ac36-3fd48b978df6" class="">A importância da diversidade de talentos/habilidades 🏄🏽</h2><p id="d030fa31-a41d-4ea0-9479-fe2709756e2c" class="">Valorizar as diferenças e a diversidade entre os integrantes de um time é apostar no enriquecimento cultural e organizacional. Cada pessoa possui talentos e habilidades diferentes e é aí que está a riqueza de um time. Aposte suas fichas em cada integrante da sua equipe e reconheça o que cada um tem para acrescentar. Lembre-se que a diversidade inspira mais abertura para novos pensamentos e, consequentemente, novas soluções para as questões que surgem no dia a dia da equipe.</p><h2 id="a95eb5a8-ebaa-4281-91d6-0253667df850" class="">Mural dos participantes 🙋🏽</h2><p id="092d4f5a-e41d-4a1f-b47a-7671499a7b21" class="">Durante todo o evento, os participantes terão acesso à um <strong>Mural dos participantes</strong> onde eles poderão encontrar informações e curiosidades sobre os participantes, que serão informadas pelos próprios através do formulário de inscrição.</p><p id="30116968-a36f-4b0e-b4a7-2fa3daa1c86d" class="">O objetivo do <strong>mural do participante</strong> é fazer com que seja mais fácil os envolvidos encontrarem outras pessoas para compor suas equipes ou até construir amizades dentro do evento.</p><h1 id="aba98c6c-35dd-4b66-bf2b-41ada16ec6aa" class="">Manual de comunicação 🗣</h1><p id="e2fc8acb-8439-4d4e-8a47-74564977fc1c" class="">Na fase <strong>pré-Hackathon</strong>, a organização se comunicará com o participante via <strong>e-mail </strong>e <strong>whatsapp. </strong> Também irá publicar informações no<mark class="highlight-blue"><a href="https://www.instagram.com/hackabee.utfpr/"> Instagram do evento</a></mark><mark class="highlight-blue">.</mark> Já durante os dias <strong>16 a 22 de Novembro</strong>, a comunicação será feita através das ferramentas <strong>Discord</strong> e <strong>Zoom</strong>.</p><p id="7c4c2c25-bead-485b-a4fc-47352b226410" class="">Aqui vamos falar um pouco sobre as ferramentas que iremos utilizar para gerenciar, encontros e palestras durante do evento. É importante lembrar que durante o Hackabee 2.0 serão liberadas capacitações para estas e outras ferramentas. Então se preocupe.<div class="indented"><h2 id="546b49bb-1758-4c4b-b92c-083a9e1db6c3" class="">Discord</h2><p id="f70e78e1-48ac-4537-ae55-ea7dd2c70e53" class="">O Discord é um aplicativo de voz e vídeo onde é possível criar e entrar em servidores e se reunir com amigos e outros usuários. Durante o Hackabee, o Discord será um dos mecanismos que serão utilizados para manter os participantes conectados com a organização e mentorias.</p><p id="d13400ad-9255-4d49-b197-ce6c6a619c8b" class="">Você pode encontrar o aplicativo para download em <mark class="highlight-blue"><a href="https://discord.com/">https://discord.com/</a></mark><mark class="highlight-blue">.</mark></p><p id="025f8170-2fb1-4d88-adfb-2f9135fe955c" class="">O <strong>server</strong> para o evento é o <strong>Hackabee 2.0</strong> e você terá acesso à ele do primeiro ao último dia do evento. A seguir falaremos mais a respeito do server no Discord, mas enquanto isso aqui está uma captura de tela do aplicativo para você ter uma noção de como ele é.</p><figure id="eba432ea-fc76-4d3c-8c29-f3c56b45b4d6" class="image"><a href="Guia%20do%20Participante%20eba432eafc764d3c8c29f3c56b45b4d6/Untitled.png"><img style="width:1360px" src="Guia%20do%20Participante%20eba432eafc764d3c8c29f3c56b45b4d6/Untitled.png"/></a></figure><h3 id="50c972ba-9be1-42b6-8b6c-9362db42b5eb" class=""><strong>Como utilizar?</strong></h3><p id="f8623bbc-92f5-4b92-901c-a5fd4e096f92" class="">O server <strong>Hackabee 2.0</strong> está separado em <strong>tópicos </strong>e<strong> canais de texto e de voz:</strong></p><ul id="c702705a-d1ad-48de-a4a6-bebf0ade4ec0" class="bulleted-list"><li><strong>Importante</strong>❗é onde ficam os canais que você e sua equipe não podem esquecer de olhar sempre;<figure id="f6b7f56d-6cf5-4ece-a172-cbe2b931a6ea" class="image"><a href="Guia%20do%20Participante%20eba432eafc764d3c8c29f3c56b45b4d6/Untitled%201.png"><img style="width:205px" src="Guia%20do%20Participante%20eba432eafc764d3c8c29f3c56b45b4d6/Untitled%201.png"/></a></figure><ul id="2fa058bf-c532-42ac-a9d4-a01f9612c694" class="bulleted-list"><li>Canais de texto<ul id="e1f8e8fd-ab10-413e-85c9-67db9e0fb14f" class="bulleted-list"><li><strong>Anúncios </strong>📣 é um canal onde somente os administradores do server e do evento poderão mandar mensagens, então lá você poderá encontrar anúncios sobre o evento, sobre os mentores, horários, materiais para consulta, staff. organização do evento, dentro outros assuntos que surgirem.</li></ul><ul id="321b2b4e-a494-414c-ab69-21acb7f4438b" class="bulleted-list"><li><strong>Regras</strong> é autoexplicativo. É o canal onde estarão disponíveis as regras do evento. Ele servirá para consulta e recomendamos que seja um dos primeiros canais para você acessar e consultar o que pode e o que não pode.</li></ul></li></ul></li></ul><ul id="8e39efc9-bb45-483a-88d0-066465c59391" class="bulleted-list"><li><strong>Saguão Principal </strong>🏦 é onde ficam os canais que serão utilizados para troca de ideias, bate papo sobre assuntos gerais e sobre o evento também;<figure id="4b290587-7bf3-41ca-913c-ed106bd34b06" class="image"><a href="Guia%20do%20Participante%20eba432eafc764d3c8c29f3c56b45b4d6/Untitled%202.png"><img style="width:220px" src="Guia%20do%20Participante%20eba432eafc764d3c8c29f3c56b45b4d6/Untitled%202.png"/></a></figure><ul id="b1034a5b-4882-430a-bb32-4473ba7181b0" class="bulleted-list"><li>Canais de texto<ul id="54a72226-cdc5-4d11-ad33-bcb2106ca2df" class="bulleted-list"><li><strong>Entrada </strong>🏦 é onde ficam os registros dos usuários que entram no server;</li></ul><ul id="adde64ec-e4ad-4cc5-979d-db499b18b0d6" class="bulleted-list"><li><strong>Saguão-principal </strong>🏦 é um canal de texto voltado para conversas gerais.</li></ul></li></ul><ul id="4b01b3a5-16c5-44cb-ad25-c695089062fd" class="bulleted-list"><li>Canais de voz<ul id="812c4fc3-4083-43a5-943c-46fb385b4ac6" class="bulleted-list"><li><strong>Saguão-principal </strong>📣 é um canal de voz voltado para conversas gerais, nele você poderá encontrar staff, mentores, palestrantes e outros participantes.</li></ul></li></ul></li></ul><ul id="897b1f0b-ca45-4e7e-94af-42ea9e362418" class="bulleted-list"><li><strong>Organização </strong>😃<strong> </strong>é um tópico dedicado aos membros da organização do evento. <ul id="1238b665-3785-44e8-a5fc-b081b81df45c" class="bulleted-list"><li>Canais de texto e voz dedicados para a organização do evento.<figure id="2d39f82e-2a97-4a17-b483-bfcc1fbc69d5" class="image"><a href="Guia%20do%20Participante%20eba432eafc764d3c8c29f3c56b45b4d6/Untitled%203.png"><img style="width:240px" src="Guia%20do%20Participante%20eba432eafc764d3c8c29f3c56b45b4d6/Untitled%203.png"/></a></figure><p id="ab0e7776-554c-4748-b3f5-0bad9294ac10" class="">
+</p></li></ul></li></ul><h2 id="69af6be7-ba6d-4ebf-a3e9-c9570ecd7904" class="">Zoom</h2><p id="4fb3aef2-ddfc-4d88-a338-5f1a2eae865d" class="">O <strong>Zoom</strong> é um <strong>aplicativo de videoconferência</strong> voltado para <em>treinamentos</em>, <em>reuniões on-line</em>, <em>eventos</em> e <em>salas de conferência habilitadas para colaboração</em>. </p><p id="298af320-82fe-41ca-a642-d79f63992989" class="">No HackaBee o <strong>Zoom</strong> será utilizado para todas as <strong>atividades ao vivo da maratona</strong>, desde a <strong>live de lançamento</strong> à <strong>abertura do evento</strong> e o <strong>encerramento</strong>.</p><p id="b9dcea2b-8e13-43ed-9818-338aa543024c" class="">Em todos os encontros vocês terão a disposição o link para acessar o evento através do <strong>e-mail</strong> e do <strong>whatsapp.</strong></p><p id="060adce5-0b69-4ea4-b501-548bf01f7032" class="">
+</p><p id="9a0df60d-f43e-416d-9f33-5e08ea4f8681" class="">Para criar uma conta no Zoom e baixar o aplicativo segue abaixo um tutorial rápido de como fazê-lo:</p><p id="32e4ba54-115c-4888-9236-241caf7a2451" class=""><strong>1)</strong> Acesse o link: <mark class="highlight-blue"><a href="http://zoom.us">zoom.us</a></mark></p><p id="5f2ad551-a064-4374-a8c0-92d94098267f" class="">
+</p><p id="707733db-2de2-4160-8c0f-8ec7e08f42d2" class=""><strong>2)</strong> No canto superior direito da tela, clique em &quot;REGISTRE-SE, É GRÁTIS&quot;. E entre com a sua data de nascimento.</p><figure id="97f4cbe6-6fe1-4af3-ba1e-bb8ae30a92ad" class="image"><a href="Guia%20do%20Participante%20eba432eafc764d3c8c29f3c56b45b4d6/Untitled%204.png"><img style="width:1340px" src="Guia%20do%20Participante%20eba432eafc764d3c8c29f3c56b45b4d6/Untitled%204.png"/></a></figure><p id="325791b5-eb61-4e33-815d-6fa0b83a940f" class="">
+</p><p id="5c38e8b3-9e3e-459a-8c9b-c65cb856c1b9" class=""><strong>3) </strong>Após entrar com a data de nascimento, digite o email que você se registrou no <strong>HackaBee 2020/02</strong>:</p></div></p><figure id="5250c8bd-0d8f-4be8-acbc-655411a3c66c" class="image"><a href="Guia%20do%20Participante%20eba432eafc764d3c8c29f3c56b45b4d6/Untitled%205.png"><img style="width:463px" src="Guia%20do%20Participante%20eba432eafc764d3c8c29f3c56b45b4d6/Untitled%205.png"/></a></figure><ul id="a1a5e6f5-aec7-438c-90c3-06b9648b2c04" class="bulleted-list"><li>Nesta etapa, você receberá um link de confirmação em seu e-mail. Vá até a caixa de entrada e confirme sua inscrição. Você será conduzido para o registro de seu nome e senha.</li></ul><p id="ef53cfec-96ee-40e4-81cb-dcc3cc6442a8" class="">
+</p><figure id="01594a84-4c4c-436d-85c2-cb2bbdc51b38" class="image"><a href="Guia%20do%20Participante%20eba432eafc764d3c8c29f3c56b45b4d6/Untitled%206.png"><img style="width:509px" src="Guia%20do%20Participante%20eba432eafc764d3c8c29f3c56b45b4d6/Untitled%206.png"/></a></figure><p id="c8841c9f-fa9f-47c8-b709-881af8ec2d67" class=""><strong>4)</strong> Após confirmar sua senha, entre na sua nova conta do zoom e acesse seu perfil no canto superior direito:</p><p id="1acb9f2a-d1a7-4e37-bfb5-08b434aad2b6" class="">
+</p><figure id="6ff63476-5bc5-4971-9593-ecee9088fbb2" class="image"><a href="Guia%20do%20Participante%20eba432eafc764d3c8c29f3c56b45b4d6/Untitled%207.png"><img style="width:406px" src="Guia%20do%20Participante%20eba432eafc764d3c8c29f3c56b45b4d6/Untitled%207.png"/></a></figure><ul id="7c32d37a-f572-47f7-9a93-98b116a49611" class="bulleted-list"><li>Nesta tela você poderá editar sua foto e seu nome:</li></ul><p id="b0a56652-8bd2-4879-aef7-e1425fe572dc" class="">
+</p><figure id="f0a079b0-7638-43af-80d3-528e92dd753c" class="image"><a href="Guia%20do%20Participante%20eba432eafc764d3c8c29f3c56b45b4d6/Untitled%208.png"><img style="width:1336px" src="Guia%20do%20Participante%20eba432eafc764d3c8c29f3c56b45b4d6/Untitled%208.png"/></a></figure><p id="03b222ca-f1a5-42f9-ad4d-8bdf5be782ee" class="">
+</p><p id="2738bcb7-caf2-4225-b03c-3842d9a8a145" class=""><strong>5)</strong> <strong>Baixando o aplicativo do Zoom:</strong></p><ul id="032aeb60-51cb-47f4-b1a5-c42611ddfef9" class="bulleted-list"><li>Vá até o rodapé da homepage do zoom em <a href="http://zoom.us">zoom.us</a>.</li></ul><p id="58aa3aa2-d342-4e31-b2bc-420c2807c0ea" class="">
+</p><figure id="8b560709-01d3-474a-9f26-e9df08d2d841" class="image"><a href="Guia%20do%20Participante%20eba432eafc764d3c8c29f3c56b45b4d6/Untitled%209.png"><img style="width:719px" src="Guia%20do%20Participante%20eba432eafc764d3c8c29f3c56b45b4d6/Untitled%209.png"/></a></figure><ul id="2d58662f-8cb6-41ac-a9b7-688d3112eef1" class="bulleted-list"><li>Baixe o Cliente do Zoom e conecte-se na conta que acabou de criar:
+</li></ul><figure id="718b6fe5-f06a-4c07-a97a-6ab16d4bb65b" class="image"><a href="Guia%20do%20Participante%20eba432eafc764d3c8c29f3c56b45b4d6/Untitled%2010.png"><img style="width:560px" src="Guia%20do%20Participante%20eba432eafc764d3c8c29f3c56b45b4d6/Untitled%2010.png"/></a></figure><p id="cf8785e3-73d2-4b4f-9349-3dcf9af115c7" class="">
+</p><h1 id="b9ffdd8b-e307-4fc1-a02d-d5c153c864bf" class="">Dicas (organização, foco, persistência) 💪</h1><p id="e192dc31-5263-4e29-bf3c-93f5d907dd4d" class="">Aqui vai algumas dicas para que você e sua equipe possam aproveitar ao máximo o tempo que estarão juntos remotamente:</p><ul id="ba47de45-b165-41a0-a0d4-4b2fd63c04ef" class="bulleted-list"><li>Reúnam-se em horários que todos possam participar das chamadas, assim os membros da equipe estarão sempre inteirados sobre o que está acontecendo.</li></ul><ul id="589d6af4-aa45-46f2-90a9-650df34e5ad3" class="bulleted-list"><li>Se não puderem se reunir todos ao mesmo tempo e no mesmo horário, então abusem dos canais de comunicação de texto do <strong>Discord</strong>.</li></ul><ul id="801956a8-0667-49bf-98d2-e6751591d75a" class="bulleted-list"><li>Evitem marcar calls durante a noite, pois esse é um horário que recomendamos que vocês dediquem para o descanso.</li></ul><ul id="1578ce40-cbe1-4e36-a433-7ac1303c0dcb" class="bulleted-list"><li>Durante o Evento haverão Mentores, então não perca a oportunidade de tirar suas dúvidas sempre que puder.</li></ul><ul id="6645eff3-1661-4f59-aab4-b36abad07c60" class="bulleted-list"><li>Câmeras ligadas ajudarão a vocês se conhecerem melhor e criar mais intimidade.</li></ul><ul id="56cc3997-2d6b-49f9-b8d3-f09ab706aa32" class="bulleted-list"><li>Se mantenham hidratados! Beber água é muito importante para a concentração e evitará que você sinta dores de cabeça também.</li></ul><ul id="cf4e47e8-a28b-487d-8e23-8621f9502e08" class="bulleted-list"><li>Utilize o seu nome de verdade dentro das ferramentas que vamos utilizar, assim ficará mais fácil para os outros participantes identificar você.</li></ul><ul id="3af54f86-f684-4974-a6da-ea23db7f8d64" class="bulleted-list"><li>Lembre-se de sempre respeitar o espaço de fala dos outros.</li></ul><ul id="eef431a5-ebe6-4184-8e95-4e18c8a951b1" class="bulleted-list"><li>Anote todas as ideias no papel para se organizar bem quando for dar sua opinião.</li></ul><h1 id="6d9177ab-55db-4f50-9d17-93858f903d2e" class="">O evento acabou, e agora? 🧗🏾‍♀️</h1><div id="51cc192b-b967-481e-919d-5b1c5eeba168" class="column-list"><div id="b806a5d9-61bc-427f-847f-d9fd8f305c53" style="width:43.75%" class="column"><p id="4dda258f-c635-4bfa-9d2f-a6cd0847fac5" class="">A <strong>Incubadora da Universidade Tecnológica</strong> -<strong> IUT</strong>, está sempre a procura de pessoas que tenham ideias inovadoras e que possam contribuir para a formação do ecossistema de inovação de Cornélio Procópio. Durante o ano são abertos alguns editais onde você pode submeter sua ideia de negócio. Então, caso você esteja animado com a solução que sua equipe chegou dentro do evento, recomendamos fortemente que fique de olho nesses editais. Assim você pode conseguir um apoio para desenvolver o seu negócio.</p><p id="ab39e032-6001-4cb6-bdb7-2209c6f32ff8" class="">
+</p></div><div id="95e00911-b0a8-4a23-a48e-f42a48c258fb" style="width:56.25%" class="column"><figure id="c73b3461-da7f-427c-b493-27d337dc5bfd" class="image"><a href="http://incubadora.cp.utfpr.edu.br/novo/wp-content/themes/incubadora/custom/sobrenos/images/hotel/hotel-01.jpg"><img style="width:336px" src="http://incubadora.cp.utfpr.edu.br/novo/wp-content/themes/incubadora/custom/sobrenos/images/hotel/hotel-01.jpg"/></a></figure><p id="bf2d6140-c2a1-4ab2-bbaa-e86c38471f19" class="">
+</p></div></div><p id="cdf3ad47-a95c-4126-b123-bdfca78fec89" class=""><strong>Quais os diferenciais da Incubadora de Inovação da UTFPR-CP?</strong></p><ul id="9848eec2-e0b1-4863-ab27-0c629aa13735" class="bulleted-list"><li>Está dentro da própria UTFPR;</li></ul><ul id="b6f4068d-9caa-4ccc-9290-db10e82ac1c8" class="bulleted-list"><li>Espaço próprio, que conta com a presença dos estudantes da Universidade;</li></ul><ul id="2cc7288d-4abc-4be1-b3ea-360a20b66437" class="bulleted-list"><li>É totalmente voltada à Inovação;</li></ul><ul id="c1fb4421-6db1-4c2c-b6eb-aff6f52ae1f8" class="bulleted-list"><li>Relação Custo-benefício;</li></ul><ul id="e067a1c3-7821-45ac-a6a5-3434192bb9a6" class="bulleted-list"><li>Equipe dedicada para lhe ajudar.</li></ul><p id="1af7f34c-5835-4277-b624-ec5678f36e75" class=""><strong>Auxílios</strong></p><ul id="88f4bfad-27e6-4205-9d4f-251a7cd4c42b" class="bulleted-list"><li>Custeio de viagens para eventos;</li></ul><ul id="5258bf2e-7bca-40a8-bb42-f7cdb07f3f61" class="bulleted-list"><li>Eventos organizados pela própria incubadora ou por parcerias;</li></ul><ul id="b8090c61-3fe0-41f4-aab5-8d4bc98bab6c" class="bulleted-list"><li>Bolsa auxílio para pré-incubação;</li></ul><ul id="0f0fcd28-671c-473a-84ae-fb7de6d129b7" class="bulleted-list"><li>Insumos para produção gráfica.</li></ul><p id="11a959d8-3cfe-43b5-ae65-5765e421cee0" class=""><strong>Networking</strong></p><ul id="478c9bd8-9a58-4e32-9a51-f148cd817db1" class="bulleted-list"><li>Eventos externos como o Summit SEBRAE, EcoTic Londrina, dentre outros;</li></ul><ul id="a3d7188b-01d1-4c39-b81b-8127f79dd67d" class="bulleted-list"><li>Eventos internos: Hackabee 2020.01, Feira da Ideia;</li></ul><ul id="436a9421-4d85-49cc-8bea-a87d2a57060e" class="bulleted-list"><li>Sistema de monitoramento de empresas certificadas pelo CERNE;</li></ul><ul id="7edcdf3b-9c4c-4da3-93ac-43e105e276de" class="bulleted-list"><li>Banco de consultores, fornecedores e mentores.</li></ul><p id="c900ee23-d3d5-4f54-b79e-b5029cb6ef50" class=""><strong>Capacitação</strong></p><ul id="7554b70a-06f3-447a-bb38-171b81bc31a3" class="bulleted-list"><li>Qualificação para potenciais empreendedores;</li></ul><ul id="baae0bc5-a552-40f5-a6ac-fc3ed3936f87" class="bulleted-list"><li>Cursos de Canvas;</li></ul><ul id="8b03a94d-7038-4770-b6cd-b6a547a55718" class="bulleted-list"><li>Qualificação para empreendedores dentro do processo de Incubação;</li></ul><ul id="95bc12bc-eaf3-4f61-a858-38acfd5daef2" class="bulleted-list"><li>Liderança Empreendedora, Gestão Financeira, Gestão de Marketing, Gestão do Produto, Gestão organizacional;</li></ul><ul id="ca01f99a-b279-4790-bc13-fe0631b70b43" class="bulleted-list"><li>Palestrantes.</li></ul><p id="ea16d32e-1b8e-4a18-9ecd-25bd2d0979f0" class=""><strong>Espaço Físico</strong></p><p id="92469d9c-6265-4f05-a6b6-2acd736fe18b" class="">A incubadora oferece uma Infraestrutura básica para ajudar no desenvolvimento das ideias e do trabalho de quem está incubado.</p><ul id="add6e178-53cf-43c9-9343-20779c6f7506" class="bulleted-list"><li>Ambiente individual: 1 sala, computador, internet, móveis (1 por indivíduo no projeto: cadeiras, mesas a disposição da instituição)</li></ul><ul id="97b44bc4-aa74-4bff-aa10-442f4c107169" class="bulleted-list"><li>Ambiente comum: Sala de reunião (30 lugares), sala de negócios (8 lugares);</li></ul><ul id="d8d1b14d-9706-4607-954c-35ba7810d339" class="bulleted-list"><li>Empresa: Criação e formação de uma empresa com CNPJ;</li></ul><ul id="db4ae885-0884-4285-a5f3-cee1500a407d" class="bulleted-list"><li>Cultura de planejamento;</li></ul><ul id="db079ccd-46a0-4ab6-8512-5b0b17bca830" class="bulleted-list"><li>Equipe de pesquisadores.</li></ul><p id="f28380ab-2f33-4948-b4b8-d043249f914d" class="">
+</p><p id="12e0cf75-4449-487c-b72e-631ae1941087" class="">Aqui você pode acessar o site da <mark class="highlight-blue"><a href="http://incubadora.cp.utfpr.edu.br/novo/"><strong>Incubadora</strong></a></mark><mark class="highlight-blue"><strong> </strong></mark>e se<strong> </strong>informar mais sobre a instituição e as formas de participação<strong>.</strong></p><p id="76ced7d6-8c34-4342-931d-da97369314b0" class="">
+</p><h1 id="276457f3-541f-4e74-a111-a8fc4beb06b6" class="">Últimos recados</h1><p id="d813625f-9713-481b-8b87-5705ba10b738" class="">Esperamos do fundo dos nossos corações que o <strong>Hackabee </strong>posse proporcionar à você uma experiência de alto impacto e muita aprendizagem, e que as ideias e conversas trocadas dentro do evento possam ser expandidas para fora dele, trazendo mais inovação para a <strong>Universidade e Sociedade</strong>.</p><p id="d9d24cd1-97fa-452c-bd04-7dc5be2c6e27" class="">Divirta-se, converse bastante com seus colegas de equipe, com outros participantes, com os mentores e com quem mais você puder.</p><p id="94f75edd-12c8-4f2c-b4a8-06ff078f0fee" class="">
+</p><figure id="69ff9d8f-5a59-465d-aa04-256280f45877" class="image"><a href="https://media1.tenor.com/images/ab8040980991c29a8b057c9f797f7aad/tenor.gif?itemid=15906747"><img style="width:576px" src="https://media1.tenor.com/images/ab8040980991c29a8b057c9f797f7aad/tenor.gif?itemid=15906747"/></a></figure><blockquote id="d0cc8ab0-b716-4306-a910-5b95bfae34a7" class=""><strong>Desejamos uma ótima jornada!</strong></blockquote><p id="a0e2d031-6f29-48ae-b941-989f029e8d21" class="">
+</p><h2 id="60f5c276-c915-4f2c-93b2-000962998b4d" class=""><strong>Continue acessando o discord!</strong></h2><p id="2152b736-5f57-4e98-8773-071b978a31b1" class="">Continue acessando o Discord! Utilize as conexões que você criar dentro do evento para evoluir as suas ideias e fazer amigos também.</p><p id="cdbf613f-f262-496c-a075-dd066a34d66f" class=""><strong>Obrigadx! </strong>😺</p></div></article></body></html>
